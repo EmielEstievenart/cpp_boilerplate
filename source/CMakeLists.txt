@@ -3,8 +3,10 @@ add_library(boilerplate
 	private_header.hpp
 )
 
-target_add_include_directories(
+target_include_directories(
 	boilerplate
 	PUBLIC
 	../includes
+	PRIVATE
+	.
 )

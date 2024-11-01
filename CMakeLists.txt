@@ -5,6 +5,9 @@ project(cpp_boilerplate LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+#This is required to use the folders in Visual Studio
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 add_subdirectory(source)
 
 option(BP_BUILD_TESTS "Build tests" ON)

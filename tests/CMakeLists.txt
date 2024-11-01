@@ -23,3 +23,5 @@ target_link_libraries(
 
 include(GoogleTest)
 gtest_discover_tests(hello_test)
+
+set_target_properties(gmock gtest gtest_main gmock_main PROPERTIES FOLDER "google_test")
