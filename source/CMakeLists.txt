@@ -6,7 +6,7 @@ add_library(boilerplate
 target_include_directories(
 	boilerplate
 	PUBLIC
-	../includes
+	../include
 	PRIVATE
 	.
 )
