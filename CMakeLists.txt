@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(cpp_hello_world LANGUAGES CXX)
 
 # GoogleTest requires at least C++14
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #This is required to use the folders in Visual Studio
