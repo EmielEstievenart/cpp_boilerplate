@@ -1,5 +1,5 @@
 set(SOURCES
-	code/boilerplate.cpp
+	code/main.cpp
 	code/private_header.hpp
 )
 
