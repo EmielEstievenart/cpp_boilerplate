@@ -1,16 +1,19 @@
 cmake_minimum_required(VERSION 3.15)
-project(cpp_boilerplate LANGUAGES CXX)
+project(cpp_hello_world LANGUAGES CXX)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #This is required to use the folders in Visual Studio
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_subdirectory(sources)
+add_subdirectory(libraries)
 
 option(BP_BUILD_TESTS "Build tests" ON)
 if(BP_BUILD_TESTS)
     add_subdirectory(tests)
 endif()
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT hello_world)
