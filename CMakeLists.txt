@@ -17,3 +17,7 @@ endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT hello_world)
+set_target_properties(hello_world PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY $(OutDir))
+
+
+set_target_properties(my_maths PROPERTIES FOLDER libraries)

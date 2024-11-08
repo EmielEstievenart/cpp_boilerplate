@@ -25,3 +25,4 @@ include(GoogleTest)
 gtest_discover_tests(hello_test)
 
 set_target_properties(gmock gtest gtest_main gmock_main PROPERTIES FOLDER "google_test")
+set_target_properties(hello_test PROPERTIES FOLDER tests)
