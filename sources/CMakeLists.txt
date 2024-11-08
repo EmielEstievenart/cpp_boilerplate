@@ -1,12 +1,15 @@
-add_library(boilerplate
-	boilerplate.cpp
-	private_header.hpp
+set(SOURCES
+	code/boilerplate.cpp
+	code/private_header.hpp
 )
 
-target_include_directories(
-	boilerplate
+add_executable(boilerplate
+	${SOURCES}
+)
+
+target_include_directories(boilerplate
 	PUBLIC
-	../include
+	../includes
 	PRIVATE
-	.
+	code
 )
