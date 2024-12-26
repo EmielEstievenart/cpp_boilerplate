@@ -15,28 +15,33 @@ project\_root/
 
 Getting started
 ----------------
-This section will explain what parts you should change to make to turn this boilerplate into your next project!
+This section will explain what parts you should change to make to turn this boilerplate into your next project.
+Following these steps, your next project will be ready in about 5 minutes!
+
 1. Copy this repo and place it it in your development environemnt.
     * Alternatively you can use the template feature of Github to get started. 
 2. Update the top-level CMakeLists.txt.
-    * Do a find and replace for cpp_boilerplate and replace it with your own name. 
+    * Do a find and replace all for cpp_boilerplate and replace it with your own name. 
     * Remove or comment out the line with set_target_propertie(my_maths ... 
 3. In the includes folder, change the folder name of cpp_boilerplate to the name of your project. 
-4. In sources/code/ change the folder name of cpp_boilerplate to the name fo your project.
-5. Update sources/CMakeLists.txt 
-    * Do a find and replace of cpp_boilerplate and replace it with your project name. 
-    * Remove or change the resources depending on what you need.  
-    * Remove the target_link_libraries of my_maths.
-    * In case of developping an executable: 
-        * Keep the main.cpp and  add_executable.
-    * In case of developping a library:
-        * Change the main.cpp file to a file befitting of your library. 
-        * Change add_executable to add_library statement in sources/CMakeLists.txt. 
-6. Manage the external libraries
+4. In sources/code/ change the folder name of cpp_boilerplate to the name of your project.
+7. Manage the external libraries
     * Remove my_maths
         * From the libraries/CMakeLists.txt
         * From the folder libraries
-    * Add your dependencies in libraries and update the libraries/CMakeLists.txt
+    * Add any libraries your project requires. The addition should be managed in the libraries/CMakeLists.txt. 
+5. Manage your resources in sources/resources
+    * Delete or add resources files
+6. Update sources/CMakeLists.txt 
+    * Do a find and replace all of cpp_boilerplate and replace it with your project name. 
+    * Remove or change the resources depending on what you need.  
+    * Remove the target_link_libraries of my_maths.
+    * In case of developping a library:
+        * Change the main.cpp file to a file befitting of your library. 
+        * Change add_executable to add_library statement in sources/CMakeLists.txt. 
+    * Link the libraries in the target_link_libraries command. 
+        * Remove my_maths and add the libraries you added previously. 
+7. Test this out, commit and start developping!
 
 Configuring
 ----------------
