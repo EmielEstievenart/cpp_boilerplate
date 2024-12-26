@@ -28,20 +28,22 @@ target_link_libraries(cpp_boilerplate
 	my_maths
 )
 
-set_target_properties(cpp_boilerplate
-	PROPERTIES
-	RESOURCE ${RESOURCES}
-)
+if(RESOURCES)
+	set_target_properties(cpp_boilerplate
+		PROPERTIES
+		RESOURCE ${RESOURCES}
+	)
 
-add_custom_command(
-	TARGET cpp_boilerplate
-	POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E make_directory
+	add_custom_command(
+		TARGET cpp_boilerplate
+		POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E make_directory
+				$<TARGET_FILE_DIR:cpp_boilerplate>/resources
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+			${CMAKE_CURRENT_SOURCE_DIR}/resources
 			$<TARGET_FILE_DIR:cpp_boilerplate>/resources
-	COMMAND ${CMAKE_COMMAND} -E copy_directory
-		${CMAKE_CURRENT_SOURCE_DIR}/resources
-		$<TARGET_FILE_DIR:cpp_boilerplate>/resources
-)
+	)
+endif()
 
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCES} ${RESOURCES})
 
