@@ -10,9 +10,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(sources)
 add_subdirectory(libraries)
 
-option(BP_BUILD_TESTS "Build tests" ON)
-if(BP_BUILD_TESTS)
-    add_subdirectory(tests)
+option(USE_UNIT_TESTS "Build tests" ON)
+if(USE_UNIT_TESTS)
+    add_subdirectory(tests/unit_tests)
 endif()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
