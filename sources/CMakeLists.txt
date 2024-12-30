@@ -31,7 +31,8 @@ target_link_libraries(cpp_boilerplate
 if(RESOURCES)
 	set_target_properties(cpp_boilerplate
 		PROPERTIES
-		RESOURCE ${RESOURCES}
+		RESOURCE 
+		"${RESOURCES}"
 	)
 
 	add_custom_command(
