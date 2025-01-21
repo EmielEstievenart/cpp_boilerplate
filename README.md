@@ -41,11 +41,11 @@ Following these steps, your next project will be ready in about 5 minutes!
         * Change add_executable to add_library statement in sources/CMakeLists.txt. 
     * Link the libraries in the target_link_libraries command. 
         * Remove my_maths and add the libraries you added previously. 
-7. Test this out, commit and start developping!
+7. Test this out, commit and start developing!
 
 Configuring
 ----------------
-Unit tests are optional and can be disbaled with -DUSE_UNIT_TESTS=0 
+Unit tests are optional and can be disabled with -DUSE_UNIT_TESTS=0 
 
 With unit testing:
 ```
@@ -63,6 +63,25 @@ Building
 ```
 cmake --build build
 ```
+
+Testing
+----------------
+### Unit tests
+Unit tests are provided via the GoogleTest framework. 
+
+### Static tests
+2 static code analysis tools are integrated into the project. 
+
+#### Cppcheck
+Cppcheck is added via a custom CMake target. You can run CMake on the project by building that target. Cppcheck is configured to use a build folder, so be sure to use this. A generator that uses compile commands is required. See [CMAKE_EXPORT_COMPILE_COMMANDS](https://cmake.org/cmake/help/latest/variable/CMAKE_EXPORT_COMPILE_COMMANDS.html) documentation on supported generators. At the time of writing, Make and Ninja generators support this.
+
+Alternatively a Visual Studio project generator can also be used. 
+
+In the future, depending on what's possible for Cppcheck, more can be added. 
+
+#### Clang-tidy
+A clang-tidy file is placed in both the root and in the sources/code folder. The tidy file in the root serves to turn off all checking, whilst the one in the sources/code folder enables checks. You can configure this as you go. 
+
 Folder Breakdown
 ----------------
 
