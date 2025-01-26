@@ -5,7 +5,7 @@ TabWidth: 4
 UseTab: Never
 ---
 Language: Cpp
-AccessModifierOffset: -2
+AccessModifierOffset: -4
 AlignAfterOpenBracket: true
 AlignConsecutiveAssignments: true
 AlignEscapedNewlines : Left
@@ -58,7 +58,7 @@ SpacesInParentheses: false
 SpacesInSquareBrackets: false
 Standard: Auto
 
-SortIncludes: true
+SortIncludes: false
 IncludeBlocks: Regroup
 IncludeCategories:
   # Match specific headers (in this case, testing related)
