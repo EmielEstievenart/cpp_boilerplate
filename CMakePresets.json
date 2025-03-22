@@ -1,46 +1,85 @@
 {
-    "version": 8,
-    "configurePresets": [
-        {
-            "name": "VS2022_x64",
-            "displayName": "Visual Studio Community 2022 Release - amd64",
-            "description": "Using compilers for Visual Studio 17 2022 (x64 architecture)",
-            "generator": "Visual Studio 17 2022",
-            "toolset": "host=x64",
-            "architecture": "x64",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe"
-            }
-        },
-        {
-            "name": "Ninja_MSVC",
-            "displayName": "Ninja MSVC",
-            "description": "Using MSVC compilers with Ninja",
-            "generator": "Ninja",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-                "CMAKE_C_COMPILER": "cl.exe",
-                "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
-            }
-        }
-    ],
-    "buildPresets": [
-        {
-            "name": "VS2022_x64-debug",
-            "displayName": "Visual Studio Community 2022 Release - amd64 - Debug",
-            "configurePreset": "VS2022_x64",
-            "configuration": "Debug"
-        },
-        {
-            "name": "Ninja_MSVC-debug",
-            "displayName": "Ninja MSVC - Debug",
-            "configurePreset": "Ninja_MSVC",
-            "configuration": "Debug"
-        }
-    ]
-}
+  "version": 8,
+  "configurePresets": [
+    {
+      "name": "windows_msvc_vs2022_x64",
+      "displayName": "windows_msvc_vs2022_x64",
+      "description": "Windows - MSVC - VS2022 generator - 64bit",
+      "generator": "Visual Studio 17 2022",
+      "toolset": "host=x64",
+      "architecture": "x64",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe"
+      }
+    },
+    {
+      "name": "windows_msvc_ninja_x86",
+      "displayName": "windows_msvc_ninja_x86",
+      "description": "Windows - MSVC - Ninja generator - 32bit",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "architecture": {
+        "value": "Win32",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
+      }
+    },
+    {
+      "name": "windows_msvc_ninja_x64",
+      "displayName": "windows_msvc_ninja_x64",
+      "description": "Windows - MSVC - Ninja generator - 64bit",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "cl.exe",
+        "CMAKE_CXX_COMPILER": "cl.exe",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
+      }
+    },
+    {
+      "name": "windows_clang_cl_ninja_x86",
+      "displayName": "windows_clang_cl_ninja_x86",
+      "description": "Windows - Clang-cl - Ninja generator - 32bit",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "architecture": {
+        "value": "Win32",
+        "strategy": "external"
+      },
+      "toolset": {
+        "value": "ClangCL",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "clang-cl.exe",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
+      }
+    },
+    {
+      "name": "windows_mingw_ninja_x64",
+      "displayName": "windows_mingw_ninja_x64",
+      "description": "Windows - Mingw - Ninja generator - 64bit",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "gcc.exe",
+        "CMAKE_CXX_COMPILER": "g++.exe",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "YES"
+      }
+    }
+  ],
+  "buildPresets": [
+  ]
+} 
