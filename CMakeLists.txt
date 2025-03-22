@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #This is required to use the folders in Visual Studio
 
-add_subdirectory(sources)
+add_subdirectory(cpp_boilerplate)
 add_subdirectory(libraries)
 
 option(USE_UNIT_TESTS "Build tests" ON)
