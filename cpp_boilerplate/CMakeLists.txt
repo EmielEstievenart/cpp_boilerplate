@@ -1,5 +1,5 @@
 set(SOURCES
-	code/cpp_boilerplate/main.cpp
+	src/cpp_boilerplate/main.cpp
 )
 
 set(RESOURCES
@@ -18,7 +18,7 @@ add_executable(cpp_boilerplate
 
 target_include_directories(cpp_boilerplate
 	PUBLIC
-	../includes
+	../interfaces/includes
 	PRIVATE
 	code
 )
