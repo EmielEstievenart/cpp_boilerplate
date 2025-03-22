@@ -45,3 +45,6 @@ CMakeUserPresets.json
 *.exe
 *.out
 *.app
+.cache/clangd/index
+.vs
+out/build
